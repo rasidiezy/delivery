@@ -1,0 +1,167 @@
+.text-header {
+    font-family: 'Poppins', sans-serif;
+}
+
+.jumbotron {
+    font-family: 'Playfair';
+    font-weight: 400;
+    background-color: #1d887e;
+    color: white;
+    position: relative;
+    z-index: 9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 2);
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 2);
+}
+
+.basic-form input {
+    border: 1px solid #E7E5F4;
+    border-radius: 50px;
+    padding: 13px 20px 13px 20px;
+    height: 40px;
+    font-size: 15px;
+}
+
+
+.bootstrap-select.btn-group .btn .caret {
+    display: none;
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.bootstrap-select {
+    max-width: 100%;
+}
+
+.bootstrap-select .btn {
+    display: block;
+    width: 100%;
+    border: 1px solid #E7E5F4;
+    border-radius: 50px;
+    padding: 12px 20px 12px 20px;
+
+}
+
+.bootstrap-select .dropdown-menu {
+    margin: 15px 0 0;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+.basic-form .checkbox .hides {
+    display: none;
+}
+
+
+/* CSS */
+.button-61 {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    appearance: none;
+    border-radius: 4px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px, rgba(0, 0, 0, .14) 0 2px 2px 0, rgba(0, 0, 0, .12) 0 1px 5px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .0892857em;
+    line-height: normal;
+    min-width: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 0 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    will-change: transform, opacity;
+}
+
+.button-61:hover {
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+
+.button-61:disabled {
+    background-color: rgba(0, 0, 0, .12);
+    box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
+    color: rgba(0, 0, 0, .37);
+    cursor: default;
+    pointer-events: none;
+}
+
+.button-61:not(:disabled) {
+    background-color: #6200ee;
+}
+
+.button-61:focus {
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+
+.button-61:active {
+    box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
+    background: #A46BF5;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a {
+    font-size: 17px;
+}
+
+.bootstrap-select.btn-group .btn .filter-option {
+    font-size: 15px;
+}
+
+.btn-primary {
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 50px;
+}
+
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+    margin-top: -9px;
+}
+
+.ongkir {
+    padding-top: 100px;
+    background-color: #d9edf7;
+}
+
+.cli {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.cla {
+    font-family: 'Poppins', sans-serif;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    font-size: 15px;
+}
+
+
+@media (max-width: 576px) {}
