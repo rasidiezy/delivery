@@ -2,6 +2,8 @@
 
 @section('content')
 <section>
+    <div id="map"></div>
+    <div id="msg"></div>
     <div class="jumbotron jumbotron-fluid text-center ">
         <div class="container ">
             <h1 class="display-4">Buntok Delivery</h1>
@@ -20,15 +22,16 @@
                 </h3>
             </div>
         </div>
+        
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 form-margin col-12">
                 <div class="row">
                 </div>
                 <div class=" form-input">
                     <form action="#" class="basic-form" method="post">
                         @csrf
-                        <input id="lat" type="hidden" value="">
-                        <input id="long" type="hidden" value="">
+                        <input id="lat" type="text" value="">
+                        <input id="long" type="text" value="">
 
                         <p class="center" id="adress"></p>
                         <div class="form-group mb-4">
@@ -45,15 +48,14 @@
                                 <option>Don Young</option>
                             </select>
                         </div>
-                        <div class="form-group mb-4">
+                        <div class="form-group mb-4 mt-5">
                             <label class="form-label">Detail Pesanan</label>
                             <input type="text" name="detail" class="form-control" required>
                         </div>
 
                         <div class="checkbox form-group mb-4">
                             <label>
-                                <input id="chkRead" type="checkbox" name="chkRead" for="chkRead">Berat (centang untuk
-                                mengubah berat)</label>
+                                <input id="chkRead" type="checkbox" name="chkRead" for="chkRead">Berat (centang untuk ubah)</label>
                             <input name="berat" type="text" readonly id="berat" value="1" class="form-control" />
                         </div>
 
@@ -81,6 +83,15 @@
                         <tbody>
                             <tr class="ongkir">
                                 <td class="col-sm-6">
+                                    <h4 class="cli">Jarak</h4>
+                                </td>
+                                <td class="col-sm-6">
+                                    <h4 class="cla">
+                                        6.6 km (12 Menit) </h4>
+                                </td>
+                            </tr>
+                            <tr class="ongkir">
+                                <td class="col-sm-6">
                                     <h4 class="cli">Ongkir Pengantaran</h4>
                                 </td>
                                 <td class="col-sm-6">
@@ -88,6 +99,7 @@
                                         5000 </h4>
                                 </td>
                             </tr>
+                          
                             <tr class="ongkir">
                                 <td class="col-sm-6">
                                     <h4 class="cli">Pesanan Tambahan</h4>

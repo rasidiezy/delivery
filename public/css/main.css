@@ -13,9 +13,13 @@
     -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 2);
 }
 
+.basic-form {
+    margin: 10px;
+}
+
 .basic-form input {
     border: 1px solid #E7E5F4;
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 13px 20px 13px 20px;
     height: 40px;
     font-size: 15px;
@@ -40,7 +44,7 @@ label {
     display: block;
     width: 100%;
     border: 1px solid #E7E5F4;
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 12px 20px 12px 20px;
 
 }
@@ -163,5 +167,9 @@ select::-ms-expand {
     font-size: 15px;
 }
 
-
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .basic-form {
+        margin: 10px;
+    }
+    
+}
