@@ -2,8 +2,8 @@
 
 @section('content')
 <section>
-    <div id="map"></div>
-    <div id="msg"></div>
+    {{-- <div id="map"></div>
+    <div id="msg"></div> --}}
     <div class="jumbotron jumbotron-fluid text-center ">
         <div class="container ">
             <h1 class="display-4">Buntok Delivery</h1>
@@ -23,15 +23,15 @@
             </div>
         </div>
         
-        <div class="row justify-content-center">
-            <div class="col-lg-6 form-margin col-12">
+        <div class="row col-md-12 col-lg-offset-3">
+            <div class=" col-lg-6 form-margin col-12">
                 <div class="row">
                 </div>
                 <div class=" form-input">
                     <form action="#" class="basic-form" method="post">
                         @csrf
-                        <input id="lat" type="text" value="">
-                        <input id="long" type="text" value="">
+                        <input id="lat" type="hidden" value="">
+                        <input id="long" type="hidden" value="">
 
                         <p class="center" id="adress"></p>
                         <div class="form-group mb-4">
@@ -48,14 +48,14 @@
                                 <option>Don Young</option>
                             </select>
                         </div>
-                        <div class="form-group mb-4 mt-5">
+                        <div class="form-group mb-4 form-detail">
                             <label class="form-label">Detail Pesanan</label>
                             <input type="text" name="detail" class="form-control" required>
                         </div>
 
                         <div class="checkbox form-group mb-4">
                             <label>
-                                <input id="chkRead" type="checkbox" name="chkRead" for="chkRead">Berat (centang untuk ubah)</label>
+                                <input id="chkRead" class="mr-2" type="checkbox" name="chkRead" for="chkRead">Berat (centang untuk ubah)</label>
                             <input name="berat" type="text" readonly id="berat" value="1" class="form-control" />
                         </div>
 
@@ -123,8 +123,9 @@
                         </tbody>
                     </table>
                 </div>
-
-                <button type="submit" class="col-8 offset-2 btn btn-primary mb-5">Pesan Sekarang</button>
+                <div class="text-center mb-5">
+                    <button type="submit" class="button-18" role="button">Pesan Sekarang</button>
+                </div>
                 </form>
             </div>
         </div>

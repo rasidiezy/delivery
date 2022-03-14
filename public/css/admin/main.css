@@ -1,0 +1,39 @@
+ .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+}
+
+.nav-link {
+      font-family: 'Poppins', sans-serif;
+}
+
+.card-header {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1d887e;
+      color: white;
+}
+
+.card-body {
+      font-family: 'Poppins', sans-serif;
+}
+
+#dropdownMenuLink {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-decoration: none;
+}
+
+.dropdown-item {
+      font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+      padding: 0;
+}
+
+.container-fluid {
+      background-color: #1d887e;
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link, .navbar-light .navbar-nav .nav-link {
+      color: white;
+}

@@ -17,6 +17,7 @@ class AdminUserTableSeeder extends Seeder
     {
         User::create([
             'nama' => 'admin',
+            'email' => 'admin@delivery.com',
             'password' => \bcrypt('12345')
         ]);
     }
