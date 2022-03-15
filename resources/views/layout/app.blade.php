@@ -39,6 +39,49 @@
 
     @yield('content')
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    {{-- Script Get Lat and Long When Select Option is Selected --}}
+    <script>
+        $('.basic-form select').change(function () {
+            ltMitra = ($(this).find(':selected').data('lat'));
+            lgMitra = ($(this).find(':selected').data('lng'));
+            initMap();
+        });
+    </script>
+
+    {{-- Script Show Input Request Order --}}
+    <script>
+        $(document).ready(function () {
+            $('.basic-form .checkbox input:checkbox').on('click', function () {
+                $(this).closest('.checkbox').find('.ch_for').toggle();
+            })
+        });
+    </script>
+
+    {{-- CHECKBOX BERAT --}}
+    <script>
+        $(document).ready(function () {
+            $("#chkRead").change(function () {
+                if ($(this).is(":checked")) {
+                    $('#berat').removeAttr("readonly")
+                } else {
+                    $('#berat').attr('readonly', true);
+                }
+            });
+        });
+    </script>
+
+    {{-- Script Delete Attr Readonly When Button My Location is Clicked --}}
+    <script>
+        $(document).ready(function () {
+            $('#btnAlamat').click(function () {
+                $("input[name='alamat']").removeAttr("readonly");
+            });
+
+        });
+
+    </script>
 
     {{-- GET LOCATION AND CHANGE TO ADRES --}}
     <script>
@@ -57,13 +100,10 @@
         function initialize() {
             var lat = latitude;
             var long = longitude;
-            console.log(lat);
-            console.log(long);
             var latlng = {
                 lat: lat,
                 lng: long
             };
-            
             var geocoder = new google.maps.Geocoder;
             geocoder.geocode({
                 'location': latlng
@@ -81,13 +121,22 @@
             });
         }
 
+
+
         // Initialize and add the map
         var map;
 
         function initMap() {
-            var lt = latitude;
-            var lg = longitude;
-            console.log(lt);
+            // Get Latitude Longitude Mitra
+            var latMitra = ltMitra;
+            var lngMitra = lgMitra;
+            console.log(latMitra);
+            console.log(lngMitra);
+
+
+            // Get Latitude Longitude User
+            var ltUser = latitude;
+            var lgUser = longitude;
             // The map, centered on Central Park
             const center = {
                 lat: 40.774102,
@@ -101,22 +150,21 @@
             map = new google.maps.Map(
                 document.getElementById('map'), options);
             // Locations of landmarks
-            const antar = {
-                lat: -1.690041,
-                lng: 114.878171
+            const mitra = {
+                lat: latMitra,
+                lng: lngMitra
             };
-            const frick = {
-                lat: -1.716310,
-                lng: 114.836672
+            const user = {
+                lat: ltUser,
+                lng: lgUser
             };
-            console.log(dakota);
-            // The markers for The Dakota and The Frick Collection
+            // The markers for The mitra and The user Collection
             var mk1 = new google.maps.Marker({
-                position: dakota,
+                position: mitra,
                 map: map
             });
             var mk2 = new google.maps.Marker({
-                position: frick,
+                position: user,
                 map: map
             });
             let directionsService = new google.maps.DirectionsService();
@@ -124,8 +172,8 @@
             directionsRenderer.setMap(map); // Existing map object displays directions
             // Create route from existing points used for markers
             const route = {
-                origin: dakota,
-                destination: frick,
+                origin: mitra,
+                destination: user,
                 travelMode: 'DRIVING'
             }
 
@@ -150,40 +198,7 @@
 
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    {{-- Script Show Input Request Order --}}
-    <script>
-        $(document).ready(function () {
-            $('.basic-form .checkbox input:checkbox').on('click', function () {
-                $(this).closest('.checkbox').find('.ch_for').toggle();
-            })
-        });
-
-    </script>
-
-    {{-- CHECKBOX BERAT --}}
-    <script>
-        $(document).ready(function () {
-            $("#chkRead").change(function () {
-                if ($(this).is(":checked")) {
-                    $('#berat').removeAttr("readonly")
-                } else {
-                    $('#berat').attr('readonly', true);
-                }
-            });
-        });
-
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $('#btnAlamat').click(function () {
-                $("input[name='alamat']").removeAttr("readonly");
-            });
-
-        });
-
-    </script>
+   
 
     <!--Load the API from the specified URL -- remember to replace YOUR_API_KEY-->
     <script async defer

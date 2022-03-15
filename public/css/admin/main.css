@@ -37,3 +37,8 @@
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link, .navbar-light .navbar-nav .nav-link {
       color: white;
 }
+
+.btn-primary {
+      font-family: 'Poppins', sans-serif !important;
+      background-color:#1d887e !important;
+}

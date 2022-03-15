@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pickup;
 
 class MitraController extends Controller
 {
@@ -14,7 +15,10 @@ class MitraController extends Controller
      */
     public function index()
     {
-        return view ('admin.mitra.index');
+        $mitra = Pickup::all();
+        return view ('admin.mitra.index', [
+            'mitra' => $mitra
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class MitraController extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.mitra.create');
     }
 
     /**
@@ -35,7 +39,9 @@ class MitraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mitra = Pickup::create($request->all());
+        $request->session()->flash('success', 'Mitra baru berhasil dibuat');
+        return redirect (route('mitra.index'));
     }
 
     /**

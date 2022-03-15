@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Str;
 
 class Pickup extends Model
 {
@@ -16,4 +17,5 @@ class Pickup extends Model
        'longitude',
        'alamat',
    ];
+
 }

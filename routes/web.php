@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
-use App\Http\Controllers\Admin\MitraController;
+use App\Http\Controllers\admin\DashboardController as AdminDashboard;
+use App\Http\Controllers\admin\MitraController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +15,13 @@ use App\Http\Controllers\Admin\MitraController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::middleware('auth')->name('admin.')->group(function(){
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [OrderController::class, 'index']);
+
+Route::middleware('auth')->group(function(){
 Route::get('dashboard', [AdminDashboard::class, 'index'])->name('dashboard');
 
 // Route::get('/dashboard', function () {

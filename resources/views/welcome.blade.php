@@ -22,7 +22,7 @@
                 </h3>
             </div>
         </div>
-        
+        <span><p id="msg"></p></span>
         <div class="row col-md-12 col-lg-offset-3">
             <div class=" col-lg-6 form-margin col-12">
                 <div class="row">
@@ -38,14 +38,13 @@
                             <label class="form-label">Nama </label>
                             <input type="text" name="nama" class="form-control" required>
                         </div>
-                        <div class="form-group mb-4">
+                        <div class="select form-group mb-4">
                             <label class="form-label">Tujuan Pickup</label>
                             <select class="form-control selectpicker" data-live-search="true" required>
-                                <option>Rumah Makan Rasidi</option>
-                                <option>Olshop Adinda</option>
-                                <option>Elizabeth Warren</option>
-                                <option>Mario Flores</option>
-                                <option>Don Young</option>
+                                <option value="">--Silahkan Pilih--</option>
+                                @foreach ($mitra as $item)
+                                <option data-lat="{{ $item->latitude }}" data-lng="{{ $item->longitude }}" data-subtext="{{Str::limit($item->alamat, 30)}}" value="{{ $item->nama }}" >{{ $item->nama }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group mb-4 form-detail">
@@ -88,6 +87,7 @@
                                 <td class="col-sm-6">
                                     <h4 class="cla">
                                         6.6 km (12 Menit) </h4>
+                                        <p id="msg"></p>
                                 </td>
                             </tr>
                             <tr class="ongkir">

@@ -12,7 +12,7 @@
               <a class="nav-link active" aria-current="page" href="#">Data Order</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('admin.mitra.index') }}">Data Mitra</a>
+              <a class="nav-link" href="{{ route('mitra.index') }}">Data Mitra</a>
             </li>
           </ul>
           @auth

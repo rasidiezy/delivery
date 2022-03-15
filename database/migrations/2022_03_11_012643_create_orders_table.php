@@ -28,6 +28,8 @@ return new class extends Migration
             $table->unsignedInteger('total');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('pickup_id')->references('id')->on('pickups');
         });
     }
 

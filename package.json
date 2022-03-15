@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "bootstrap": "^5.1.3",
+        "location-picker": "^1.1.1",
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0"
     }
