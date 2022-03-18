@@ -2,8 +2,10 @@
 
 @section('content')
 <section>
-    {{-- <div id="map"></div>
-    <div id="msg"></div> --}}
+    <div id="map"></div>
+
+   
+
     <div class="jumbotron jumbotron-fluid text-center ">
         <div class="container ">
             <h1 class="display-4">Buntok Delivery</h1>
@@ -22,7 +24,7 @@
                 </h3>
             </div>
         </div>
-        <span><p id="msg"></p></span>
+   
         <div class="row col-md-12 col-lg-offset-3">
             <div class=" col-lg-6 form-margin col-12">
                 <div class="row">
@@ -32,9 +34,10 @@
                         @csrf
                         <input id="lat" type="hidden" value="">
                         <input id="long" type="hidden" value="">
-
-                        <p class="center" id="adress"></p>
+                    
                         <div class="form-group mb-4">
+                            <!--<h4 id="msg"></h4>-->
+                                 <!--<p id="msg"></p>-->
                             <label class="form-label">Nama </label>
                             <input type="text" name="nama" class="form-control" required>
                         </div>
@@ -47,7 +50,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group mb-4 form-detail">
+                        <div class="form-group mb-4">
                             <label class="form-label">Detail Pesanan</label>
                             <input type="text" name="detail" class="form-control" required>
                         </div>
@@ -78,6 +81,7 @@
                         </div>
                 </div>
                 <div class="row mb-5 mt-5">
+                       
                     <table class="table">
                         <tbody>
                             <tr class="ongkir">
@@ -85,9 +89,7 @@
                                     <h4 class="cli">Jarak</h4>
                                 </td>
                                 <td class="col-sm-6">
-                                    <h4 class="cla">
-                                        6.6 km (12 Menit) </h4>
-                                        <p id="msg"></p>
+                                    <h4 class="cla" id="jarak1"></h4>
                                 </td>
                             </tr>
                             <tr class="ongkir">

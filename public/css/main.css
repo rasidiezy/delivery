@@ -69,7 +69,7 @@ label {
     border: 1px solid #E7E5F4;
     border-radius: 10px;
     padding: 12px 20px 12px 20px;
-
+    font-family: 'Poppins', sans-serif;
 }
 
 .bootstrap-select .dropdown-menu {
@@ -241,25 +241,29 @@ select::-ms-expand {
     box-shadow: 0 0 3px 2px #0095ff;
 }
 
-/* Desktop Device */
-@media only screen and (min-width: 768px) {
-
-    .bootstrap-select.btn-group .dropdown-menu li a {
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-    }
+.bootstrap-select .dropdown-menu li a {
+    font-family: 'Poppins', sans-serif;
 }
+
+
+/* Desktop Device */
+/*@media only screen and (min-width: 768px) {*/
+
+/*   .bootstrap-select .dropdown-menu li a span.text {*/
+/*       font-family: 'Poppins', sans-serif;*/
+/*   }*/
+/*}*/
 
 /* Mobile Device */
 @media (max-width: 576px) {
-    .basic-form {
-        margin: 10px;
+   .basic-form {
+       margin: 10px;
+   }
+   .jumbotron h1 {
+       font-size: 40px;
+   }
+   .bootstrap-select.btn-group .dropdown-menu li a {
+       font-family: 'Poppins', sans-serif;
+       font-size: 13px;
     }
-    .jumbotron h1 {
-        font-size: 40px;
-    }
-    .bootstrap-select.btn-group .dropdown-menu li a {
-        font-family: 'Poppins', sans-serif;
-        font-size: 13px;
-    }
-}
+} 

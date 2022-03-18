@@ -10,44 +10,40 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> --}}
+    
     <style>
         /* Set the size of the div element that contains the map */
         #map {
             height: 400px;
             width: 600px;
         }
-
     </style>
-    <title>Document</title>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcNfPU5Xhy2zxtoZKfkLUnpJvtWLLozbY&callback=initialize"
-        async defer></script>
-
-
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry"></script>
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <title>Buntok Delivery</title>
+  
 </head>
 
 <body>
 
     @yield('content')
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
     {{-- Script Get Lat and Long When Select Option is Selected --}}
     <script>
         $('.basic-form select').change(function () {
             ltMitra = ($(this).find(':selected').data('lat'));
             lgMitra = ($(this).find(':selected').data('lng'));
+            console.log(ltMitra);
             initMap();
         });
+
     </script>
 
     {{-- Script Show Input Request Order --}}
@@ -57,9 +53,10 @@
                 $(this).closest('.checkbox').find('.ch_for').toggle();
             })
         });
+
     </script>
 
-    {{-- CHECKBOX BERAT --}}
+    {{--SCRIPT CHECKBOX BERAT --}}
     <script>
         $(document).ready(function () {
             $("#chkRead").change(function () {
@@ -70,6 +67,29 @@
                 }
             });
         });
+
+    </script>
+
+    {{-- <script>
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker({});
+        });
+    </script> --}}
+
+    {{-- Script Change Price if Additional Order is Checked --}}
+    <script>
+        $('#addOrder1').on('click', function () {
+            var $addOrder1Check = $('#addOrder1').is(':checked');
+            var text = '';
+            if ($addOrder1Check) {
+                text = '5000';
+            } else if ($(this).not(":checked")) {
+                text = '0';
+            }
+
+            $('.addOrder').html(text);
+        });
+
     </script>
 
     {{-- Script Delete Attr Readonly When Button My Location is Clicked --}}
@@ -78,12 +98,11 @@
             $('#btnAlamat').click(function () {
                 $("input[name='alamat']").removeAttr("readonly");
             });
-
         });
 
     </script>
 
-    {{-- GET LOCATION AND CHANGE TO ADRES --}}
+    {{-- GET LOCATION AND CHANGE TO ADRESS --}}
     <script>
         function getLocation() {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -137,6 +156,8 @@
             // Get Latitude Longitude User
             var ltUser = latitude;
             var lgUser = longitude;
+            console.log(ltUser);
+            console.log(lgUser);
             // The map, centered on Central Park
             const center = {
                 lat: 40.774102,
@@ -198,15 +219,23 @@
 
     </script>
 
-   
+
 
     <!--Load the API from the specified URL -- remember to replace YOUR_API_KEY-->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcNfPU5Xhy2zxtoZKfkLUnpJvtWLLozbY&callback=initMap">
-    </script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script> --}}
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcNfPU5Xhy2zxtoZKfkLUnpJvtWLLozbY&callback=initialize"
+    async defer></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcNfPU5Xhy2zxtoZKfkLUnpJvtWLLozbY&callback=initMap">
+</script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 </body>
 
 </html>
