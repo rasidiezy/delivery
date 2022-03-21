@@ -70,6 +70,7 @@ label {
     border-radius: 10px;
     padding: 12px 20px 12px 20px;
     font-family: 'Poppins', sans-serif;
+    font-size: 15px;
 }
 
 .bootstrap-select .dropdown-menu {
@@ -83,6 +84,41 @@ select::-ms-expand {
 
 .basic-form .checkbox .hides {
     display: none;
+}
+
+.button-close-modal {
+     background-color: #1d887e;
+      margin-left: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    appearance: none;
+    border-radius: 4px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px, rgba(0, 0, 0, .14) 0 2px 2px 0, rgba(0, 0, 0, .12) 0 1px 5px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .0892857em;
+    line-height: normal;
+    min-width: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 0 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    will-change: transform, opacity;
 }
 
 
@@ -209,21 +245,40 @@ select::-ms-expand {
 }
 
 .ongkir {
-    padding-top: 100px;
+    padding: 10px;
     background-color: #d9edf7;
 }
 
 .cli {
     font-family: 'Poppins', sans-serif;
     text-align: left;
-    margin-left: 10px;
+    font-size: 15px;
+}
+
+.cli1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    margin-right: 10px;
+    display:inline;
+    padding-left:9px;
+    font-size: 15px;
 }
 
 .cla {
     font-family: 'Poppins', sans-serif;
     text-align: right;
     margin-right: 10px;
+      font-size: 15px;
 }
+
+.cla1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: right;
+    margin-right: 20px;
+    padding-top: 6px;
+      font-size: 15px;
+}
+
 
 .form-control:disabled,
 .form-control[readonly] {
@@ -231,9 +286,10 @@ select::-ms-expand {
 }
 
 .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
-    margin-left: -33px;
+    margin-top: -1px;
     border: 1px solid #636566;
     box-shadow: 0 0 3px 2px #0095ff;
+    margin-left: -12px;
 }
 
 .checkbox label::before {
@@ -243,27 +299,98 @@ select::-ms-expand {
 
 .bootstrap-select .dropdown-menu li a {
     font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    text-align: left;
+}
+
+/*body.modal-open {*/
+/*  overflow: auto;*/
+/*}*/
+body .modal-dialog { /* Width */
+    max-width: 100%;
+    width: auto !important;
+    display: inline-block;
+}
+
+.modal {
+  z-index: -1;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-open .modal {
+   z-index: 1050;
+}
+
+.modal.in {
+  pointer-events: none;
+}
+.modal-content {
+  pointer-events:all;
+}
+
+
+.modal-title {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.modal-header {
+    background-color: #1d887e;
+}
+
+.modal-footer{
+    text-align: right;    
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.note-modal {
+    font-size: 11px;
+    text-align: initial;
+    
+}
+
+.hided {
+    display: none;
 }
 
 
 /* Desktop Device */
-/*@media only screen and (min-width: 768px) {*/
-
-/*   .bootstrap-select .dropdown-menu li a span.text {*/
-/*       font-family: 'Poppins', sans-serif;*/
-/*   }*/
-/*}*/
+@media only screen and (min-width: 768px) {
+    
+   .bootstrap-select .dropdown-menu li a span.text {
+       font-family: 'Poppins', sans-serif;
+   }
+   
+   #map {
+         height: 400px;
+            width: 570px;
+   }
+}
 
 /* Mobile Device */
 @media (max-width: 576px) {
-   .basic-form {
-       margin: 10px;
-   }
-   .jumbotron h1 {
-       font-size: 40px;
-   }
-   .bootstrap-select.btn-group .dropdown-menu li a {
-       font-family: 'Poppins', sans-serif;
-       font-size: 13px;
+    .margin-padding {
+        padding:0;
+        margin:0px;
     }
-} 
+    
+    .jumbotron h1 {
+        font-size: 40px;
+    }
+    .bootstrap-select.btn-group .dropdown-menu li a {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+    }
+    
+      #map {
+         height: 400px;
+            width: 340px;
+   }
+/*}*/
+}
