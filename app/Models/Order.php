@@ -12,13 +12,17 @@ class Order extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'pickup_id',
         'nama',
         'latitude',
         'longitude',
         'alamat',
         'detail',
-        'berat',
         'no_hp',
+        'request_order',
+        'jarak',
+        'ongkir',
+        'total',
     ];
 
     /**

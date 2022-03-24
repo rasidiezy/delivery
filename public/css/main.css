@@ -16,6 +16,7 @@
 .jumbotron h1 {
     font-size: 80px;
 }
+
 /* .jumbotron {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
@@ -75,6 +76,7 @@ label {
 
 .bootstrap-select .dropdown-menu {
     margin: 15px 0 0;
+    width: 100%;
 }
 
 select::-ms-expand {
@@ -87,8 +89,8 @@ select::-ms-expand {
 }
 
 .button-close-modal {
-     background-color: #1d887e;
-      margin-left: 5px;
+    background-color: #1d887e;
+    margin-left: 5px;
     margin-bottom: 5px;
     align-items: center;
     appearance: none;
@@ -157,9 +159,11 @@ select::-ms-expand {
     vertical-align: middle;
     will-change: transform, opacity;
 }
+
 .button-61:hover {
     box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
 }
+
 .button-61:disabled {
     background-color: rgba(0, 0, 0, .12);
     box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
@@ -167,63 +171,67 @@ select::-ms-expand {
     cursor: default;
     pointer-events: none;
 }
+
 .button-61:not(:disabled) {
     background-color: #1d887e;
 }
+
 .button-61:focus {
     box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
 }
+
 .button-61:active {
     box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
     background: #A46BF5;
 }
+
 /* CSS */
 .button-18 {
     font-family: 'Poppins';
-  align-items: center;
-  background-color: #1d887e;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
+    align-items: center;
+    background-color: #1d887e;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
 }
 
 .button-18:hover,
-.button-18:focus { 
-  background-color: #16437E;
-  color: #ffffff;
+.button-18:focus {
+    background-color: #16437E;
+    color: #ffffff;
 }
 
 
 .button-18:active {
-  background: #09223b;
-  color: rgb(255, 255, 255, .7);
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
 }
 
-.button-18:disabled { 
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
+.button-18:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
 }
 
 
@@ -231,10 +239,13 @@ select::-ms-expand {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
 }
+
 .btn-primary {
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     min-height: 50px;
+    background-color: #1d887e;
 }
 
 .checkbox input[type=checkbox],
@@ -249,6 +260,12 @@ select::-ms-expand {
     background-color: #d9edf7;
 }
 
+.ongkir1 {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+}
+
 .cli {
     font-family: 'Poppins', sans-serif;
     text-align: left;
@@ -259,8 +276,7 @@ select::-ms-expand {
     font-family: 'Poppins', sans-serif;
     text-align: left;
     margin-right: 10px;
-    display:inline;
-    padding-left:9px;
+    display: inline;
     font-size: 15px;
 }
 
@@ -268,15 +284,15 @@ select::-ms-expand {
     font-family: 'Poppins', sans-serif;
     text-align: right;
     margin-right: 10px;
-      font-size: 15px;
+    font-size: 15px;
 }
 
 .cla1 {
     font-family: 'Poppins', sans-serif;
     text-align: right;
-    margin-right: 20px;
+    margin-right: 10px;
     padding-top: 6px;
-      font-size: 15px;
+    font-size: 15px;
 }
 
 
@@ -285,7 +301,10 @@ select::-ms-expand {
     font-size: 15px;
 }
 
-.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
     margin-top: -1px;
     border: 1px solid #636566;
     box-shadow: 0 0 3px 2px #0095ff;
@@ -302,35 +321,42 @@ select::-ms-expand {
     font-size: 13px;
 }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
     text-align: left;
 }
 
 /*body.modal-open {*/
 /*  overflow: auto;*/
 /*}*/
-body .modal-dialog { /* Width */
+body .modal-dialog {
+    /* Width */
     max-width: 100%;
     width: auto !important;
     display: inline-block;
 }
 
 .modal {
-  z-index: -1;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+    z-index: -1;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-open .modal {
-   z-index: 1050;
+    z-index: 1050;
 }
 
 .modal.in {
-  pointer-events: none;
+    pointer-events: none;
 }
+
 .modal-content {
-  pointer-events:all;
+    pointer-events: all;
 }
 
 
@@ -343,8 +369,8 @@ body .modal-dialog { /* Width */
     background-color: #1d887e;
 }
 
-.modal-footer{
-    text-align: right;    
+.modal-footer {
+    text-align: right;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
 }
@@ -352,7 +378,7 @@ body .modal-dialog { /* Width */
 .note-modal {
     font-size: 11px;
     text-align: initial;
-    
+
 }
 
 .hided {
@@ -360,37 +386,45 @@ body .modal-dialog { /* Width */
 }
 
 
+
+
+
+
 /* Desktop Device */
 @media only screen and (min-width: 768px) {
-    
-   .bootstrap-select .dropdown-menu li a span.text {
-       font-family: 'Poppins', sans-serif;
-   }
-   
-   #map {
-         height: 400px;
-            width: 570px;
-   }
+
+    .bootstrap-select .dropdown-menu li a span.text {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #map {
+        height: 400px;
+        width: 570px;
+    }
 }
 
 /* Mobile Device */
 @media (max-width: 576px) {
     .margin-padding {
-        padding:0;
-        margin:0px;
+        padding: 0;
+        margin: 0px;
     }
-    
+
     .jumbotron h1 {
         font-size: 40px;
     }
+
     .bootstrap-select.btn-group .dropdown-menu li a {
         font-family: 'Poppins', sans-serif;
         font-size: 13px;
     }
-    
-      #map {
-         height: 400px;
-            width: 340px;
-   }
-/*}*/
+
+    #map {
+        height: 400px;
+        width: 340px;
+    }
+
+    /*}*/
+
+
 }

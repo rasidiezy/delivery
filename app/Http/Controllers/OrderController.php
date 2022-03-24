@@ -18,4 +18,8 @@ class OrderController extends Controller
           'mitra' => $mitra
       ]);
     }
+
+    public function store(Request $request){
+       return $request->all();
+    }
 }

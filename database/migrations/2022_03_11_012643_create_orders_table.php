@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pickup_id');
             $table->string('nama');
-            $table->decimal('latitude');
-            $table->decimal('longitude');
+            $table->decimal('latitude', 10, 7);
+            $table->decimal('longitude', 10, 7);
             $table->text('alamat');
             $table->text('detail');
             $table->unsignedInteger('berat');
             $table->string('no_hp');
-            $table->unsignedInteger('request_order')->default(0);
+            $table->string('request_order')->nullable();
             $table->unsignedInteger('ongkir');
             $table->unsignedInteger('total');
             $table->timestamps();

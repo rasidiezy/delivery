@@ -24,11 +24,8 @@ Route::get('/', [OrderController::class, 'index']);
 Route::middleware('auth')->group(function(){
 Route::get('dashboard', [AdminDashboard::class, 'index'])->name('dashboard');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
 Route::resource('mitra', MitraController::class);
 });
+Route::post('order',[OrderController::class, 'store'])->name('order.store'); 
 
 require __DIR__.'/auth.php';
