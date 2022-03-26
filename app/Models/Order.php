@@ -20,6 +20,7 @@ class Order extends Model
         'detail',
         'no_hp',
         'request_order',
+        'biaya_rq',
         'jarak',
         'ongkir',
         'total',

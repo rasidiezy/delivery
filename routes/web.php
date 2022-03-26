@@ -26,6 +26,9 @@ Route::get('dashboard', [AdminDashboard::class, 'index'])->name('dashboard');
 
 Route::resource('mitra', MitraController::class);
 });
+
 Route::post('order',[OrderController::class, 'store'])->name('order.store'); 
+Route::get('/order/success',[OrderController::class, 'success'])->name('order.success');
+
 
 require __DIR__.'/auth.php';

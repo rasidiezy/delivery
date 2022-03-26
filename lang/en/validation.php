@@ -142,8 +142,23 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nama' => [
+            'required' => 'Mohon isi nama terlebih dahulu',
+            'min' => 'Inputan nama minimal 3 karakter',
+        ],
+        'pickup_id' => [
+            'required' => 'Mohon pilih tujuan pickup anda',
+        ],
+        'detail' => [
+            'required' => 'Mohon isi detail pesanan anda',
+            'min' => 'Informasi detail minimal 5 karakter',
+        ],
+        'alamat' => [
+            'required' => 'Klik lokasi saya untuk mendapatkan lokasi',
+        ],
+        'no_hp' => [
+            'required' => 'Mohon isi nomor hp terlebih dahulu',
+            'numeric' => 'Inputan nomor hp hanya bisa diisikan angka',
         ],
     ],
 

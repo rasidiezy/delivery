@@ -164,6 +164,16 @@ select::-ms-expand {
     box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
 }
 
+.btn-rute:hover {
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+
+a:hover {
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+    color: white;
+}
+
 .button-61:disabled {
     background-color: rgba(0, 0, 0, .12);
     box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
@@ -385,13 +395,127 @@ body .modal-dialog {
     display: none;
 }
 
+.text-danger {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
 
+.info-success {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
+.info-success h2 {
+    font-weight: bold;
+}
+
+/* svg success */
+.container-svg {
+    width: 300px;
+    margin: 50px auto;
+  }
+ 
+
+    @keyframes success-tick {
+      0% {
+        stroke-dashoffset: 16px;
+        opacity: 1
+      }
+  
+      100% {
+        stroke-dashoffset: 31px;
+        opacity: 1
+      }
+    }
+  
+    @keyframes success-circle-outline {
+      0% {
+        stroke-dashoffset: 72px;
+        opacity: 1
+      }
+  
+      100% {
+        stroke-dashoffset: 0px;
+        opacity: 1
+      }
+    }
+  
+    @keyframes success-circle-fill {
+      0% {
+        opacity: 0;
+      }
+  
+      100% {
+        opacity: 1;
+      }
+    }
+  
+    .success-tick {
+      fill: none;
+      stroke-width: 1px;
+      stroke: #ffffff;
+      stroke-dasharray: 15px, 15px;
+      stroke-dashoffset: -14px;
+      animation: success-tick 450ms ease 1400ms forwards;
+      opacity: 0;
+    }
+  
+    .success-circle-outline {
+      fill: none;
+      stroke-width: 1px;
+      stroke: #81c038;
+      stroke-dasharray: 72px, 72px;
+      stroke-dashoffset: 72px;
+      animation: success-circle-outline 300ms ease-in-out 800ms forwards;
+      opacity: 0;
+    }
+  
+    .success-circle-fill {
+      fill: #81c038;
+      stroke: none;
+      opacity: 0;
+      animation: success-circle-fill 300ms ease-out 1100ms forwards;
+    }
+  
+     /* Can't animate stroke-dashoffset on IE 10 and 11, just show svg instead */
+    /* @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+      .success-tick {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+        animation: none;
+        opacity: 1;
+      }
+  
+      .success-circle-outline {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+        animation: none;
+        opacity: 1;
+      }
+  
+      .success-circle-fill {
+        animation: none;
+        opacity: 1;
+      }
+    } */
+  
 
 
 
 /* Desktop Device */
 @media only screen and (min-width: 768px) {
+
+    .svg-success {
+        display: inline-block;
+        vertical-align: top;
+        height: 250px;
+        width: 300px;
+        opacity: 1;
+        overflow: visible;
+      }
 
     .bootstrap-select .dropdown-menu li a span.text {
         font-family: 'Poppins', sans-serif;
@@ -409,6 +533,20 @@ body .modal-dialog {
         padding: 0;
         margin: 0px;
     }
+
+    .btn-primary {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .svg-success {
+        display: inline-block;
+        vertical-align: top;
+        height: 200px;
+        width: 300px;
+        opacity: 1;
+        overflow: visible;
+      }
 
     .jumbotron h1 {
         font-size: 40px;

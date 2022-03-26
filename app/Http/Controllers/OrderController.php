@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Pickup;
+use App\Http\Requests\Store;
 
 class OrderController extends Controller
 {
@@ -19,7 +20,17 @@ class OrderController extends Controller
       ]);
     }
 
-    public function store(Request $request){
-       return $request->all();
+    public function store(Store $request){
+      // mengambil data inputan
+       $data = $request->all();
+      //save data order
+       $orders = Order::create($data);
+       $this->getSnapRedirect($orders);
+
+       return redirect(route('order.success'));
+    }
+
+    public function success(){
+      return view('success');
     }
 }

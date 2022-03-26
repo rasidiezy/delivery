@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+    {{-- @include('components.alert') --}}
     @yield('content')
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -40,9 +40,9 @@
                 $("#btnRute").prop("disabled", true)
             }
             // menghapus data jarak, ongkir, total sebelumnya
-            document.getElementById("jarak1").innerHTML = '';
-            document.getElementById("ongkir").innerHTML = '';
-            document.getElementById("total").innerHTML = '';
+            document.getElementById("jarak2").innerHTML = '';
+            document.getElementById("ongkir1").innerHTML = '';
+            document.getElementById("total1").innerHTML = '';
             ltMitra = ($(this).find(':selected').data('lat'));
             lgMitra = ($(this).find(':selected').data('lng'));
             initMap();
@@ -72,7 +72,7 @@
     <!--        });-->
     <!--    });-->
     <!--</script>-->
-        
+
     {{-- Script Change Price if Additional Order is Checked --}}
     <script>
         $('#addOrder1').on('click', function () {
@@ -80,14 +80,15 @@
 
             var text = '0';
             if ($addOrder1Check) {
-                document.getElementById("total").innerHTML = '';
+                document.getElementById("total1").innerHTML = '';
                 // $("input:text").val(5000);
                 text = '5000';
             } else if ($(this).not(":checked")) {
-                document.getElementById("total").innerHTML = '';
+                document.getElementById("total1").innerHTML = '';
                 text = '0';
             }
             $('.addOrder').html(text);
+            document.getElementById('biayarq').value = text;
 
             addOrder = parseInt(text);
 
@@ -126,9 +127,9 @@
     {{-- GET LOCATION AND CHANGE TO ADRESS --}}
     <script>
         function getLocation() {
-            document.getElementById("jarak1").innerHTML = '';
-            document.getElementById("ongkir").innerHTML = '';
-            document.getElementById("total").innerHTML = '';
+            document.getElementById("jarak2").innerHTML = '';
+            document.getElementById("ongkir1").innerHTML = '';
+            document.getElementById("total1").innerHTML = '';
             navigator.geolocation.getCurrentPosition(function (position) {
                 var coordinates = position.coords;
                 document.getElementById('lat').value = coordinates.latitude;
@@ -232,9 +233,13 @@
                             window.alert('Rute tidak dapat ditentukan');
                             return;
                         } else {
-                             document.getElementById('jarak1').value = directionsData.distance.text;
+                            replace = directionsData.distance.text.replace(",", ".");
+                            var explode = replace.split(" ", 1);
 
-                            // document.getElementById('jarak1').innerHTML += directionsData.distance.text;
+                            document.getElementById('jarak1').value = parseFloat(explode);
+
+                            document.getElementById('jarak2').innerHTML += directionsData.distance.text;
+
                             jarak = directionsData.distance.text;
 
                             hitungOngkir();
@@ -257,14 +262,19 @@
 
             if (ongkir1 < 5000) {
                 ongkir1 = 5000;
-                document.getElementById('ongkir').innerHTML += 5000;
+                biaya = 5000;
+                // document.getElementById('ongkir').value += 5000;
                 // document.getElementById('total').innerHTML += ongkir1;
             } else {
-                //  $('#ongkir').val((ongkir1));
-                document.getElementById('ongkir').value = ongkir1;
-                // document.getElementById('ongkir').innerHTML += ongkir1;
+                biaya = ongkir1;
+                // document.getElementById('ongkir').value = ongkir1;
+                // document.getElementById('ongkir2').innerHTML += ongkir1;.
                 // document.getElementById('total').innerHTML += ongkir1;
             }
+
+            document.getElementById('ongkir').value = parseInt(biaya);
+            document.getElementById('ongkir1').innerHTML += biaya;
+
             ongkir = ongkir1;
 
             hitungTotal();
@@ -281,8 +291,8 @@
             }
 
 
-              document.getElementById('total').value = total;
-            // document.getElementById('total').innerHTML += total;
+            document.getElementById('total').value = parseInt(total);
+            document.getElementById('total1').innerHTML += total;
 
         }
 
