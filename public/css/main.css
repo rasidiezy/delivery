@@ -2,6 +2,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
+#jarak1, #ongkir, #biayarq, #total {
+     font-family: 'Poppins', sans-serif;
+     font-size: 15px;
+    background: transparent;
+    border: none;
+    width: inherit;
+    pointer-events: none; 
+}
+
+#total {
+    font-weight:bold;
+}
+
+
+
 .jumbotron {
     font-family: 'Bebas Neue';
     font-weight: 400;
@@ -266,7 +281,6 @@ a:hover {
 }
 
 .ongkir {
-    padding: 10px;
     background-color: #d9edf7;
 }
 
@@ -280,12 +294,14 @@ a:hover {
     font-family: 'Poppins', sans-serif;
     text-align: left;
     font-size: 15px;
+    margin-left: 10px;
 }
 
 .cli1 {
     font-family: 'Poppins', sans-serif;
     text-align: left;
     margin-right: 10px;
+    margin-left: 10px;
     display: inline;
     font-size: 15px;
 }
@@ -533,6 +549,10 @@ body .modal-dialog {
         padding: 0;
         margin: 0px;
     }
+    
+/*    .row {*/
+/*    margin-right: 0px;*/
+/*}*/
 
     .btn-primary {
         margin-left: 10px;

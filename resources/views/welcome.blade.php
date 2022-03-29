@@ -33,12 +33,9 @@
                         @csrf
 
                         <div class="form-group mb-3">
-                            <input id="lat" name="latitude" type="hidden" value="">
-                            <input id="long" name="longitude" type="hidden" value="">
-                            <input id="jarak1" name="jarak" type="hidden" value="">
-                            <input id="ongkir" name="ongkir" type="hidden" value="">
-                            <input id="biayarq" name="biayarq" type="hidden" value="0">
-                            <input id="total" name="total" type="hidden" value="">
+                            <input id="lat" name="latitude" type="hidden" value="{{old('latitude')}}" >
+                            <input id="long" name="longitude" type="hidden" value="{{old('longitude')}}">
+                            
                             <label class="form-label">Nama </label>
                             <input type="text" name="nama" class="form-control {{ $errors->has('nama') ? 'is-invalid' : '' }}" value="{{old('nama')}}" >
                             @if ($errors->has('nama'))
@@ -66,7 +63,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label">Detail Pesanan</label>
-                            <input type="text" name="detail" class="form-control {{ $errors->has('detail') ? 'is-invalid' : '' }}">
+                            <input type="text" name="detail" class="form-control {{ $errors->has('detail') ? 'is-invalid' : '' }}"  value="{{old('detail')}}">
                             @if ($errors->has('detail'))
                         <div class=" text-center" role="alert">
                         <p  class="text-danger">{{ $errors->first('detail') }}</p>
@@ -90,7 +87,7 @@
                             <!--<button data-toggle="modal" data-target="#myModal"-->
                             <!--                class="button-61 btn-sm hided ml-2" id="btnRute" role="document"-->
                             <!--                disabled>Lihat Rute</button>-->
-                            <input id="alamat" type="text" name="alamat" class="form-control {{ $errors->has('alamat') ? 'is-invalid' : '' }}" readonly> 
+                            <input id="alamat" type="text" name="alamat" class="form-control {{ $errors->has('alamat') ? 'is-invalid' : '' }}"  value="{{old('alamat')}}" readonly> 
                             @if ($errors->has('alamat'))
                             <div class=" text-center" role="alert">
                             <p  class="text-danger">{{ $errors->first('alamat') }}</p>
@@ -103,7 +100,7 @@
 
                         <div class="form-group mb-3">
                             <label class="form-label">Nomor HP</label>
-                            <input type="text" name="no_hp" class="form-control {{ $errors->has('no_hp') ? 'is-invalid' : '' }}">
+                            <input type="text" name="no_hp" class="form-control {{ $errors->has('no_hp') ? 'is-invalid' : '' }}"  value="{{old('no_hp')}}">
                             @if ($errors->has('no_hp'))
                             <div class=" text-center" role="alert">
                             <p  class="text-danger">{{ $errors->first('no_hp') }}</p>
@@ -112,81 +109,26 @@
                         </div>
                         <div class="checkbox form-group mb-2">
                             <label>
-                                <input id="addOrder1" type="checkbox" value="ch01" unchecked>Permintaan
+                                <input id="addOrder1" type="checkbox" name="ch01"  @if(old('ch01')) checked @endif>Permintaan
                                 Pesanan Tambahan
                             </label>
-                            <input type="text" name="request_order" placeholder="Contoh: Belanja ke Alfamart"
-                                class="form-control ch_for hides">
+                            <input type="text" id="reqOrder" name="request_order" placeholder="Contoh: Belanja ke Alfamart"
+                                class="form-control ch_for hides"  value="{{old('request_order')}}">
                         </div>
+                        
                 </div>
                 <div class="row mb-2">
                     <table class="table">
                         <tbody>
                             <div class="container ongkir">
                                 <div class="row">
-                                    <div class="col-8">
+                                    <div class="col-8 d-flex align-items-center">
                                         <h4 class="cli1">Jarak</h4>
                                         <a data-toggle="modal" data-target="#myModal"
                                             class="button-61 btn-sm hided ml-2" id="btnRute" role="document"
                                             disabled>Lihat Rute</a>
                                     </div>
-                                    <div class="col-4">
-                                        <h4 class="cla1 " id="jarak2"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container ongkir">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h4 class="cli">Ongkir Pengantaran</h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <h4 class="cla" id="ongkir1">
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container ongkir">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h4 class="cli">Pesanan Tambahan</h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <h4 class="cla addOrder">
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container ongkir1">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <h4 class="cli"> <strong>TOTAL</strong></h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <h4 class="cla font-weight-bold" id="total1">
-
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-center mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg" name="submit" role="button">PESAN
-                        SEKARANG</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-
-
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -210,6 +152,61 @@
             </div>
         </div>
     </div>
+                                    <div class="col-4">
+                                        <input id="jarak1" name="jarak" type="text" value="{{old('jarak')}}"  style="text-align:right;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container ongkir">
+                                <div class="row">
+                                    <div class="col-8 d-flex align-items-center">
+                                        <h4 class="cli">Ongkir Pengantaran</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <input id="ongkir" name="ongkir" type="text" value="{{old('ongkir')}}"  style="text-align:right;">
+                                      
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container ongkir">
+                                <div class="row">
+                                    <div class="col-8 d-flex align-items-center">
+                                        <h4 class="cli">Pesanan Tambahan</h4>
+                                    </div>
+                                    <div class="col-4">
+                                          <input id="biayarq" name="biaya_rq" type="text" value="{{old('biaya_rq')}}"  style="text-align:right;" >
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container ongkir">
+                                <div class="row"> 
+                                    <div class="col-8 d-flex align-items-center">
+                                        <h4 class="cli"> <strong>TOTAL</strong></h4>
+                                    </div>
+                                    <div class="col-4">
+                                       <input id="total" name="total" type="text" value="{{old('total')}}"  style="text-align:right;">
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg" name="submit" role="button">PESAN
+                        SEKARANG</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+   
 
 </section>
 @endsection

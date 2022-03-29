@@ -15,11 +15,26 @@
         </g>
       </svg>
     </div>
+    <input id='nama' type='hidden' value='{{ucwords(trans ($nama) ) }}' >
+    <input id='ltuser' type='hidden' value='{{ $ltuser }}' >
+    <input id='lguser' type='hidden' value='{{ $lguser }}' >
+    <input id='detail' type='hidden' value='{{ucwords(trans ($detail) ) }}' >
+    <input id='alamat' type='hidden' value='{{ucwords(trans ($alamat) ) }}' >
+    <input id='nohp' type='hidden' value='{{ $nohp }}' >
+    <input id='reqorder' type='hidden' value="{{ucwords(trans ($reqorder ?: 'Tidak Ada') ) }} " >
+    <input id='jarak' type='hidden' value='{{ $jarak }}' >
+    <input id='ongkir' type='hidden' value='{{ $ongkir }}' >
+    <input id='biayarq' type='hidden' value='{{ $biayarq ?: 0 }}' >
+    <input id='total' type='hidden' value='{{ $total  }}' >
+    <input id='ltmitra' type='hidden' value='{{ $mitra->latitude }}' >
+    <input id='lgmitra' type='hidden' value='{{ $mitra->longitude }}' >
+    <input id='namamitra' type='hidden' value='{{ucwords(trans ($mitra->nama) ) }}' >
     <div class="info-success">
+
           <h2 class="text-center ">Yay, order anda berhasil</h2>
           <p class="text-center">Mohon menunggu beberapa detik anda akan segera diarahkan ke Whatsapp.</p>
     </div>
     <div class="text-center mb-3">
-      <button type="submit" class="btn btn-primary btn-lg" name="submit" role="button">KLIK DISINI JIKA BELUM DIARAHKAN DALAM BEBERAPA DETIK</button>
+      <button class="btn btn-primary btn-lg" role="button" onclick="gotowhatsapp();">KLIK DISINI JIKA BELUM DIARAHKAN DALAM BEBERAPA DETIK</button>
   </div>
 @endsection

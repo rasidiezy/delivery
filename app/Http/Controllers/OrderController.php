@@ -22,15 +22,31 @@ class OrderController extends Controller
 
     public function store(Store $request){
       // mengambil data inputan
-       $data = $request->all();
+    //   $data = $request->all();
       //save data order
-       $orders = Order::create($data);
-       $this->getSnapRedirect($orders);
+    //   $orders = Order::create($data);
+    
+    
+      $orders = new Order;
+      $jarak = explode(' ', request('jarak'));
+      $orders->pickup_id = $request->pickup_id;
+      $orders->nama = $request->nama;
+      $orders->latitude = $request->latitude;
+      $orders->longitude = $request->longitude;
+      $orders->alamat = $request->alamat;
+      $orders->detail = $request->detail;
+      $orders->no_hp = $request->no_hp;
+      $orders->request_order = $request->request_order;
+      $orders->biaya_rq = $request->biaya_rq;
+      $orders->jarak = $jarak[0];
+      $orders->ongkir = $request->ongkir;
+      $orders->total = $request->total;
+      $orders->save(); 
 
-       return redirect(route('order.success'));
+
+      $mitra = Pickup::where('id', $request->pickup_id)->first();
+
+      return view('success', compact('mitra'))->withPickupid($request->pickup_id)->withNama($request->nama)->withLtuser($request->latitude)->withLguser($request->longitude)->withAlamat($request->alamat)->withDetail($request->detail)->withNohp($request->no_hp)->withReqorder($request->request_order)->withBiayarq($request->biaya_rq)->withJarak($jarak[0])->withOngkir($request->ongkir)->withTotal($request->total);
     }
 
-    public function success(){
-      return view('success');
-    }
 }

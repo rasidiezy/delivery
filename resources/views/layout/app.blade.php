@@ -39,10 +39,7 @@
             } else {
                 $("#btnRute").prop("disabled", true)
             }
-            // menghapus data jarak, ongkir, total sebelumnya
-            document.getElementById("jarak2").innerHTML = '';
-            document.getElementById("ongkir1").innerHTML = '';
-            document.getElementById("total1").innerHTML = '';
+         
             ltMitra = ($(this).find(':selected').data('lat'));
             lgMitra = ($(this).find(':selected').data('lng'));
             initMap();
@@ -52,12 +49,19 @@
 
     {{-- Script Show Input Request Order --}}
     <script>
-        $(document).ready(function () {
+    if(document.getElementById('addOrder1').checked) {
+    $("#reqOrder").show();
+} else {
+    $("#reqOrder").hide();
+}
+    </script>
+    
+    <script>
+          $(document).ready(function () {
             $('.basic-form .checkbox input:checkbox').on('click', function () {
                 $(this).closest('.checkbox').find('.ch_for').toggle();
             })
         });
-
     </script>
 
     {{-- CHECKBOX BERAT --}}
@@ -80,18 +84,15 @@
 
             var text = '0';
             if ($addOrder1Check) {
-                document.getElementById("total1").innerHTML = '';
                 // $("input:text").val(5000);
                 text = '5000';
             } else if ($(this).not(":checked")) {
-                document.getElementById("total1").innerHTML = '';
+
                 text = '0';
             }
-            $('.addOrder').html(text);
+            // $('.addOrder').html(text);
             document.getElementById('biayarq').value = text;
-
-            addOrder = parseInt(text);
-
+             addOrder = parseInt(text);
             hitungTotal();
         });
 
@@ -127,9 +128,6 @@
     {{-- GET LOCATION AND CHANGE TO ADRESS --}}
     <script>
         function getLocation() {
-            document.getElementById("jarak2").innerHTML = '';
-            document.getElementById("ongkir1").innerHTML = '';
-            document.getElementById("total1").innerHTML = '';
             navigator.geolocation.getCurrentPosition(function (position) {
                 var coordinates = position.coords;
                 document.getElementById('lat').value = coordinates.latitude;
@@ -234,14 +232,12 @@
                             return;
                         } else {
                             replace = directionsData.distance.text.replace(",", ".");
-                            var explode = replace.split(" ", 1);
+                          
 
-                            document.getElementById('jarak1').value = parseFloat(explode);
-
-                            document.getElementById('jarak2').innerHTML += directionsData.distance.text;
+                            document.getElementById('jarak1').value = replace;
 
                             jarak = directionsData.distance.text;
-
+                            
                             hitungOngkir();
 
                         }
@@ -273,7 +269,6 @@
             }
 
             document.getElementById('ongkir').value = parseInt(biaya);
-            document.getElementById('ongkir1').innerHTML += biaya;
 
             ongkir = ongkir1;
 
@@ -292,11 +287,85 @@
 
 
             document.getElementById('total').value = parseInt(total);
-            document.getElementById('total1').innerHTML += total;
 
         }
 
     </script>
+    
+     <script>
+        function gotowhatsapp() {
+        
+        var ltuser = document.getElementById("ltuser").value;
+        var lguser = document.getElementById("lguser").value;
+        var ltmitra = document.getElementById("ltmitra").value;
+        var lgmitra = document.getElementById("lgmitra").value;
+        var name = document.getElementById("nama").value;
+        var alamat = document.getElementById("alamat").value;
+        var detail = document.getElementById("detail").value;
+        var nohp = document.getElementById("nohp").value;
+        var reqorder = document.getElementById("reqorder").value;
+        var jarak = document.getElementById("jarak").value;
+        var ongkir = document.getElementById("ongkir").value;
+        var biayarq = document.getElementById("biayarq").value;
+        var total = document.getElementById("total").value;
+        var namamitra = document.getElementById("namamitra").value;
+        
+        // var lengthbrq = biayarq.length;
+        // console.log(lengthbrq);
+        
+        var	ongkir_string = ongkir.toString(),
+        	sisa 	= ongkir_string.length % 3,
+        	rupiah 	= ongkir_string.substr(0, sisa),
+        	ribuan 	= ongkir_string.substr(sisa).match(/\d{3}/g);
+            if (ribuan) {
+        	separator = sisa ? '.' : '';
+        	ongkira = rupiah + separator + ribuan.join('.');
+            }  
+            
+            if (biayarq.length > 1) {
+                    var	biayarq_string = biayarq.toString(),
+                	sisa 	= biayarq_string.length % 3,
+                	rupiah 	= biayarq_string.substr(0, sisa),
+                	ribuan 	= biayarq_string.substr(sisa).match(/\d{3}/g);
+                    if (ribuan) {
+                	separator = sisa ? '.' : '';
+                	biayarqa = rupiah + separator + ribuan.join('.');
+                    } 
+            }else {
+                biayarqa = biayarq;
+            }
+         
+            
+            var	total_string = total.toString(),
+        	sisa 	= total_string.length % 3,
+        	rupiah 	= total_string.substr(0, sisa),
+        	ribuan 	= total_string.substr(sisa).match(/\d{3}/g);
+            if (ribuan) {
+        	separator = sisa ? '.' : '';
+        	totala = rupiah + separator + ribuan.join('.');
+            }
+        
+    
+        var url = "https://wa.me/6282279357171?text=" 
+        + "Nama: " + name + "%0a" 
+        + "Detail Pesanan: " + detail  + "%0a"
+        + "%0a" 
+        + "Tujuan Pickup: " + namamitra + " (https://maps.google.com/?q="+ ltmitra + "," + lgmitra +")" + "%0a" 
+        + "%0a"
+        + "Tujuan Pengantaran: " +alamat + " (https://maps.google.com/?q="+ ltuser + "," + lguser +")" + "%0a"
+        + "%0a"
+        + "Pesanan Tambahan: " + reqorder  + "%0a"
+        + "No HP: " + nohp  + "%0a"
+        + "%0a"
+        + "Jarak: " + jarak  + " Km" + "%0a"
+        + "Ongkir Pengantaran: " + ongkira  + "%0a"
+        + "Biaya Pesanan Tambahan: " + biayarqa   + "%0a"
+        + "*TOTAL BIAYA PENGANTARAN: " + totala + "*" + "%0a"
+    
+        window.open(url, '_blank').focus(); 
+        }
+    </script>
+
 
 
 
