@@ -31,21 +31,27 @@
 
     {{-- Script Get Lat and Long When Select Option is Selected --}}
     <script>
-        $('#test #tujuanPickup').on('change', function () {
+        $(' #tujuanPickup').on('change', function () {
             // mendapatkan data length untuk membuat tombol lihat rute enable
-            var subjectLength = $('#test #tujuanPickup').val().length;
+            var subjectLength = $('#tujuanPickup').val().length;
+          
             if (subjectLength > 0) {
-                $("#btnRute").prop("disabled", false)
+              $("#btnRute").removeClass("disabled");
+              $("#btnRute").addClass("active");
             } else {
-                $("#btnRute").prop("disabled", true)
+             $("#btnRute").addClass("disabled");
+             $("#btnRute").removeClass("active");
             }
          
             ltMitra = ($(this).find(':selected').data('lat'));
             lgMitra = ($(this).find(':selected').data('lng'));
             initMap();
         });
-
     </script>
+    
+
+        
+
 
     {{-- Script Show Input Request Order --}}
     <script>
@@ -102,6 +108,8 @@
     <script>
         $(document).ready(function () {
             $('#btnAlamat').click(function () {
+          
+                
                 $("input[name='alamat']").removeAttr("readonly");
                 $("#btnRute").removeClass("hided");
                 $("#passwordHelpBlock").removeClass("hided");
@@ -122,6 +130,27 @@
         });
 
     </script>
+    
+     <script>
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                $(".loading-btna").removeClass("hided");
+                
+                $(".btn-txt1").text("Mohon menunggu..");
+
+
+                setTimeout(() => {
+                    $(".loading-btna").addClass("hided");
+                    //  $(".hitung-jarak").addClass("hided");
+                    // $(this).prop("disabled", false);
+                    $(".btn-txt1").text("PESAN SEKARANG");
+                }, 10000);
+            });
+
+        });
+
+    </script>
+
 
 
 
@@ -222,7 +251,7 @@
             directionsService.route(route,
                 function (response, status) { // anonymous function to capture directions
                     if (status !== 'OK') {
-                        window.alert('Rute tidak dapat ditentukan ' + status);
+                        window.alert('Rute tidak dapat ditentukan, Silahkan pilih tujuan pickup ' + status);
                         return;
                     } else {
                         directionsRenderer.setDirections(response); // Add route to the map
@@ -277,16 +306,19 @@
 
         function hitungTotal() {
             var ongkir2 = parseInt(ongkir);
-            // var addOrder1 = parseInt(addOrder);
-
-            if (typeof addOrder == 'undefined') {
-                total = ongkir2 + 0;
-            } else {
-                total = ongkir2 + addOrder;
+            console.log(ongkir2);
+           
+            if( isNaN(ongkir2) ){
+                ongkir2 = 0;
             }
+            
+            if (typeof addOrder == 'undefined') {
+                addOrder = 0;
+            } 
+            
+            total = ongkir2 + addOrder;
 
-
-            document.getElementById('total').value = parseInt(total);
+            document.getElementById('total').value = total;
 
         }
 
@@ -294,7 +326,6 @@
     
      <script>
         function gotowhatsapp() {
-        
         var ltuser = document.getElementById("ltuser").value;
         var lguser = document.getElementById("lguser").value;
         var ltmitra = document.getElementById("ltmitra").value;
@@ -346,7 +377,9 @@
             }
         
     
-        var url = "https://wa.me/6282279357171?text=" 
+        var url = "https://wa.me/6285158580660?text=" 
+        + "Halo saya baru saja memesan jasa pengantaran" + " *Buntok Delivery* " + "dengan detail pesanan sebagai berikut :" + "%0a" 
+        + "%0a" 
         + "Nama: " + name + "%0a" 
         + "Detail Pesanan: " + detail  + "%0a"
         + "%0a" 
@@ -361,8 +394,11 @@
         + "Ongkir Pengantaran: " + ongkira  + "%0a"
         + "Biaya Pesanan Tambahan: " + biayarqa   + "%0a"
         + "*TOTAL BIAYA PENGANTARAN: " + totala + "*" + "%0a"
+       
+     
+        // window.open(url, '_blank').focus(); 
     
-        window.open(url, '_blank').focus(); 
+        window.location.href = url;
         }
     </script>
 

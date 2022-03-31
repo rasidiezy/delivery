@@ -15,7 +15,24 @@
     font-weight:bold;
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: rgba(0, 0, 0, .12);
+  box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
+  color: rgba(0, 0, 0, .37);
+}
 
+
+.disabled-cb {
+    pointer-events:none;
+    opacity:0.5;
+}
+
+.active {
+    background-color: #1d887e;
+
+}
 
 .jumbotron {
     font-family: 'Bebas Neue';
@@ -32,16 +49,6 @@
     font-size: 80px;
 }
 
-/* .jumbotron {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    background-color: #1d887e;
-    color: white;
-    position: relative;
-    z-index: 9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 2);
-    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 2);
-} */
 
 .basic-form {
     margin: 10px;
@@ -140,7 +147,45 @@ select::-ms-expand {
 
 
 /* CSS */
-.button-61 {
+.button-rute {
+    color: #fff;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    appearance: none;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .0892857em;
+    line-height: normal;
+    min-width: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 0 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    will-change: transform, opacity;
+}
+
+.button-rute:hover {
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+
+.button-61 { 
     margin-left: 5px;
     margin-bottom: 5px;
     align-items: center;
@@ -271,6 +316,11 @@ a:hover {
     font-weight: 600;
     min-height: 50px;
     background-color: #1d887e;
+    border-color: #1d887e;
+}
+
+.btn-primary:hover {
+    background-color: #1cc88a;
 }
 
 .checkbox input[type=checkbox],
@@ -519,7 +569,7 @@ body .modal-dialog {
     } */
   
 
-
+    
 
 /* Desktop Device */
 @media only screen and (min-width: 768px) {

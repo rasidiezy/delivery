@@ -1,6 +1,8 @@
 @extends('layout.app')
 
 @section('content')
+
+
 <div class="jumbotron jumbotron-fluid text-center ">
       <div class="container ">
           <h1 class="display-4">Buntok Delivery</h1>
@@ -37,4 +39,20 @@
     <div class="text-center mb-3">
       <button class="btn btn-primary btn-lg" role="button" onclick="gotowhatsapp();">KLIK DISINI JIKA BELUM DIARAHKAN DALAM BEBERAPA DETIK</button>
   </div>
+  
+  
+<script> 
+    window.onload = function() {
+        setInterval (function() {
+          gotowhatsapp();
+        }, 3000); 
+    };
+    
+//      $(window).on('load', function () {
+//       alert("Window Loaded");
+//  });
+    // function loadWhatsapp() {
+    //   alert("Whatsapp is loaded");
+    // }
+</script>
 @endsection

@@ -125,7 +125,7 @@
                                     <div class="col-8 d-flex align-items-center">
                                         <h4 class="cli1">Jarak</h4>
                                         <a data-toggle="modal" data-target="#myModal"
-                                            class="button-61 btn-sm hided ml-2" id="btnRute" role="document"
+                                            class="button-rute btn-sm hided ml-2 disabled" id="btnRute" role="document"
                                             disabled>Lihat Rute</a>
                                     </div>
                                      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -194,9 +194,14 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="text-center mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg" name="submit" role="button">PESAN
-                        SEKARANG</button>
+                <div class="text-center mb-5">
+                    <!--<button type="submit" class="btn btn-primary btn-lg" id="btnSubmit" name="submit" role="button"><i class="loading-btna spinner-border spinner-border-sm mr-2 hided"></i>PESAN-->
+                    <!--    SEKARANG-->
+                    <!--</button>-->
+                    <button type="submit" class="btn btn-primary btn-lg" id="btnSubmit" name="submit" role="button"><i class="loading-btna spinner-border spinner-border-sm mr-2 hided"></i><span class="btn-txt1">PESAN
+                        SEKARANG</span></button>
+                        <!--<button id="submit" class="submit" type="button" >Submit</button>-->
+                        
                 </div>
                 </form>
             </div>
