@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Pickup;
+use App\Models\Discount;
 use App\Http\Requests\Store;
 
 class OrderController extends Controller
@@ -15,8 +16,9 @@ class OrderController extends Controller
     //mengambil data checkout, user dan paket sesuai user yang login
     // $order = Order::find(1);
       $mitra = Pickup::all();
+      $discount = Discount::all();
       return view('welcome',[
-          'mitra' => $mitra
+          'mitra' => $mitra , 'discount' => $discount
       ]);
     }
 
