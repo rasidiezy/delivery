@@ -25,12 +25,14 @@ class OrderController extends Controller
     public function store(Store $request){
       // mengambil data inputan
     //   $data = $request->all();
+    //  return $request->all();
       //save data order
     //   $orders = Order::create($data);
     
     
       $orders = new Order;
       $jarak = explode(' ', request('jarak'));
+      $diskon = str_replace("-", "", $request->diskon);
       $orders->pickup_id = $request->pickup_id;
       $orders->nama = $request->nama;
       $orders->latitude = $request->latitude;
@@ -42,13 +44,14 @@ class OrderController extends Controller
       $orders->biaya_rq = $request->biaya_rq;
       $orders->jarak = $jarak[0];
       $orders->ongkir = $request->ongkir;
+      $orders->discount_id = $request->id_diskon;
+      $orders->potongan_diskon = $diskon;
       $orders->total = $request->total;
       $orders->save(); 
 
 
       $mitra = Pickup::where('id', $request->pickup_id)->first();
-
-      return view('success', compact('mitra'))->withPickupid($request->pickup_id)->withNama($request->nama)->withLtuser($request->latitude)->withLguser($request->longitude)->withAlamat($request->alamat)->withDetail($request->detail)->withNohp($request->no_hp)->withReqorder($request->request_order)->withBiayarq($request->biaya_rq)->withJarak($jarak[0])->withOngkir($request->ongkir)->withTotal($request->total);
+      return view('success', compact('mitra'))->withPickupid($request->pickup_id)->withNama($request->nama)->withLtuser($request->latitude)->withLguser($request->longitude)->withAlamat($request->alamat)->withDetail($request->detail)->withNohp($request->no_hp)->withReqorder($request->request_order)->withBiayarq($request->biaya_rq)->withJarak($jarak[0])->withOngkir($request->ongkir)->withTotal($request->total)->withPotongandiskon($diskon);
     }
 
 }

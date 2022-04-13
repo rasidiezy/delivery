@@ -23,7 +23,9 @@ class Order extends Model
         'biaya_rq',
         'jarak',
         'ongkir',
+        'potongan_diskon',
         'total',
+        'discount_id',
     ];
 
     /**

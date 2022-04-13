@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             $table->foreignId('discount_id')->nullable()->after('ongkir');
-            $table->unsignedInteger('diskon_persentase')->nullable()->after('discount_id');
+            $table->unsignedInteger('potongan_diskon')->nullable()->after('discount_id');
 
             $table->foreign('discount_id')->references('id')->on('discounts');
         });
