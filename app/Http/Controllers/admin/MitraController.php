@@ -5,7 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pickup;
-
+use App\Http\Requests\admin\Store;
+use App\Http\Requests\Update;
 class MitraController extends Controller
 {
     /**
@@ -37,10 +38,12 @@ class MitraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Store $request)
     {
         $mitra = Pickup::create($request->all());
-        $request->session()->flash('success', 'Mitra baru berhasil dibuat');
+        $namaMitra = $request->nama;
+        $values = "Mitra {$namaMitra} berhasil ditambahkan.";
+        $request->session()->flash('success', $values);
         return redirect (route('mitra.index'));
     }
 
@@ -61,9 +64,11 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pickup $mitra)
     {
-        //
+        return view('admin.mitra.update', [
+            'mitra' => $mitra
+        ]);
     }
 
     /**
@@ -73,9 +78,13 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Update $request, Pickup $mitra)
     {
-        //
+        $mitra->update($request->all());
+        $namaMitra = $request->nama;
+        $values = "Mitra {$namaMitra} berhasil diupdate.";
+        $request->session()->flash('success', $values);
+        return redirect (route('mitra.index'));
     }
 
     /**
@@ -84,8 +93,10 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Pickup $mitra)
     {
-        //
+        $mitra->delete();
+        $request->session()->flash('error', 'Mitra berhasil dihapus');
+        return redirect (route('mitra.index'));
     }
 }

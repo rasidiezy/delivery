@@ -1,5 +1,5 @@
 .text-header {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
 .body {
@@ -30,7 +30,7 @@
 }
 
 #text {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     z-index: 2;
     position: absolute;
     top: 50%;
@@ -44,7 +44,7 @@
 }
 
 .text-overlay {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .disc-text {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
 .disc-text .min-ongkir {
@@ -97,7 +97,7 @@
 #biayarq,
 #potonganDiskon,
 #total {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
     background: transparent;
     border: none;
@@ -122,8 +122,17 @@
     justify-content: center;
 }
 
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: black;
+}
+
+.form-control:focus {
+    border-color: #1d887e;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
 #diskon {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
     background: transparent;
     float: right;
@@ -181,7 +190,7 @@
 }
 
 .basic-form input {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     border: 1px solid #e7e5f4;
     border-radius: 10px;
     padding: 13px 20px 13px 20px;
@@ -202,7 +211,7 @@
 }
 
 label {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
     font-weight: normal;
 }
@@ -217,7 +226,7 @@ label {
     border: 1px solid #e7e5f4;
     border-radius: 10px;
     padding: 12px 20px 12px 20px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
 }
 
@@ -248,7 +257,7 @@ select::-ms-expand {
     color: #fff;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
     height: 25px;
     justify-content: center;
@@ -389,7 +398,7 @@ a:hover {
 
 /* CSS */
 .button-18 {
-    font-family: "Poppins";
+    font-family: "Rubik";
     align-items: center;
     background-color: #1d887e;
     border: 0;
@@ -398,7 +407,7 @@ a:hover {
     color: #ffffff;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 16px;
     font-weight: 600;
     justify-content: center;
@@ -438,7 +447,7 @@ a:hover {
 }
 
 .bootstrap-select.btn-group .btn .filter-option {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
 }
 
@@ -450,7 +459,7 @@ a:hover {
 
 #alertDiskon,
 #diskonUnavailable {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 12px;
     font-weight: 500;
 }
@@ -462,7 +471,7 @@ a:hover {
 
 .btn-primary1 {
     font-size: 17px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-weight: 600;
     min-height: 50px;
     background-color: #1d887e;
@@ -472,7 +481,7 @@ a:hover {
 .btn-primary-discount {
     color: white;
     font-size: 15px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     min-height: 40px;
     background-color: #1d887e;
     border-color: #1d887e;
@@ -500,14 +509,14 @@ a:hover {
 }
 
 .cli {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     text-align: left;
     font-size: 15px;
     margin-left: 10px;
 }
 
 .cli1 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     text-align: left;
     margin-right: 10px;
     margin-left: 10px;
@@ -516,14 +525,14 @@ a:hover {
 }
 
 .cla {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     text-align: right;
     margin-right: 10px;
     font-size: 15px;
 }
 
 .cla1 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     text-align: right;
     margin-right: 10px;
     padding-top: 6px;
@@ -545,14 +554,28 @@ a:hover {
     margin-left: -12px;
 }
 
+[type="checkbox"],
+[type="radio"] {
+    color: #1d887e;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #1d887e;
+}
+
 .checkbox label::before {
     border: 1px solid #0095ff;
     box-shadow: 0 0 3px 2px #0095ff;
 }
 
 .bootstrap-select .dropdown-menu li a {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 13px;
+}
+
+.swal-text {
+    font-family: "Rubik", sans-serif;
 }
 
 .table > tbody > tr > td,
@@ -622,7 +645,7 @@ body .modal-dialog {
 }
 
 .modal-title {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     color: white;
 }
 
@@ -632,7 +655,7 @@ body .modal-dialog {
 
 .modal-footer {
     text-align: right;
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
 }
 
@@ -642,7 +665,7 @@ body .modal-dialog {
 }
 
 a.fill-div {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
     display: block;
     height: 100%;
@@ -668,12 +691,12 @@ a.fill-div:hover {
 }
 
 .text-danger {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 15px;
 }
 
 .info-success {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: 20px;
     margin-bottom: 50px;
     margin-left: 10px;
@@ -789,7 +812,7 @@ a.fill-div:hover {
     }
 
     .bootstrap-select .dropdown-menu li a span.text {
-        font-family: "Poppins", sans-serif;
+        font-family: "Rubik", sans-serif;
     }
 
     #map {
@@ -828,7 +851,7 @@ a.fill-div:hover {
     }
 
     .bootstrap-select.btn-group .dropdown-menu li a {
-        font-family: "Poppins", sans-serif;
+        font-family: "Rubik", sans-serif;
         font-size: 13px;
     }
 

@@ -129,12 +129,11 @@
                             <div class=" form-group mb-3">
                                 <label class="form-label">Tujuan Pickup</label>
                                 <select id="tujuanPickup" name="pickup_id" class="form-control selectpicker"
-                                    data-live-search="true" value="{{ old('pickup_id') }}">
+                                    data-live-search="true" value="">
                                     <option value="">--Silahkan Pilih--</option>
                                     @foreach ($mitra as $item)
                                         <option data-lat="{{ $item->latitude }}" data-lng="{{ $item->longitude }}"
-                                            data-subtext="{{ $item->alamat }}" value="{{ $item->id }}"
-                                            {{ old('pickup_id') == $item->id ? 'selected' : '' }}>
+                                            data-subtext="{{ $item->alamat }}" value="{{ $item->id }}">
                                             {{ $item->nama }}</option>
                                     @endforeach
                                 </select>
@@ -173,8 +172,7 @@
                                 <!--                class="button-61 btn-sm hided ml-2" id="btnRute" role="document"-->
                                 <!--                disabled>Lihat Rute</button>-->
                                 <input id="alamat" type="text" name="alamat"
-                                    class="form-control {{ $errors->has('alamat') ? 'is-invalid' : '' }}"
-                                    value="{{ old('alamat') }}" readonly>
+                                    class="form-control {{ $errors->has('alamat') ? 'is-invalid' : '' }}" readonly>
                                 @if ($errors->has('alamat'))
                                     <div class=" text-center" role="alert">
                                         <p class="text-danger">{{ $errors->first('alamat') }}</p>
@@ -198,8 +196,7 @@
                             </div>
                             <div class="checkbox form-group mb-2">
                                 <label>
-                                    <input id="addOrder1" type="checkbox" name="ch01"
-                                        @if (old('ch01')) checked @endif>Permintaan
+                                    <input id="addOrder1" type="checkbox" name="ch01">Permintaan
                                     Pesanan Tambahan
                                 </label>
                                 <input type="text" id="reqOrder" name="request_order"
@@ -238,8 +235,7 @@
                                             </div>
 
                                             <div class="col-4">
-                                                <input id="jarak1" name="jarak" type="text" value="{{ old('jarak') }}"
-                                                    style="text-align:right;">
+                                                <input id="jarak1" name="jarak" type="text" style="text-align:right;">
                                             </div>
                                         </div>
                                     </div>
@@ -249,8 +245,7 @@
                                                 <h4 class="cli">Ongkir Pengantaran</h4>
                                             </div>
                                             <div class="col-4">
-                                                <input id="ongkir" name="ongkir" type="text" value="{{ old('ongkir') }}"
-                                                    style="text-align:right;">
+                                                <input id="ongkir" name="ongkir" type="text" style="text-align:right;">
 
                                                 </h4>
                                             </div>
@@ -263,8 +258,7 @@
                                                 <h4 class="cli">Pesanan Tambahan</h4>
                                             </div>
                                             <div class="col-4">
-                                                <input id="biayarq" name="biaya_rq" type="text"
-                                                    value="{{ old('biaya_rq') }}" style="text-align:right;">
+                                                <input id="biayarq" name="biaya_rq" type="text" style="text-align:right;">
                                                 </h4>
                                             </div>
                                         </div>
@@ -277,7 +271,7 @@
                                             </div>
                                             <div class="col-4">
                                                 <input id="potonganDiskon" name="diskon" type="text"
-                                                    value="{{ old('potonganDiskon') }}" style="text-align:right;">
+                                                    style="text-align:right;">
                                                 </h4>
                                             </div>
                                         </div>
@@ -289,8 +283,7 @@
                                                 <h4 class="cli"> <strong>TOTAL</strong></h4>
                                             </div>
                                             <div class="col-4">
-                                                <input id="total" name="total" type="text" value="{{ old('total') }}"
-                                                    style="text-align:right;">
+                                                <input id="total" name="total" type="text" style="text-align:right;">
                                                 </h4>
                                             </div>
                                         </div>

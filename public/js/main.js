@@ -20,31 +20,6 @@ $("#voucher").on("click", function () {
             $(this).toggleClass("disabled", ongkirNum < this.dataset.minongkir);
         });
     }
-
-    // if (mitra === 0 || user === 0) {
-    //     $(".modal-body").addClass("overlay");
-    //     $("#text")
-    //         .empty()
-    //         .append(
-    //             "<p class='text-overlay'><strong>Mohon pilih lokasi tujuan dan lokasi anda terlebih dahulu..</strong></p>"
-    //         );
-    //     $(".diskon-data").css("pointer-events", "none");
-    //     $(".disc-persen").css("opacity", "0.4");
-    // } else {
-    //     $("#text").remove();
-    //     $(".modal-body").removeClass("overlay");
-    //     $(".diskon-data").css("pointer-events", "");
-    //     $(".disc-persen").css("opacity", "1");
-    //     $(".disc-persen").css("color", "white");
-    //     // mengambil value ongkir
-    //     var ongkir = $("#ongkir").val();
-    //     var ongkirNum = parseInt(ongkir.replace(".", ""));
-
-    //     // membuat fungsi diskon akan disable jika ongkir tidak mencapai min ongkir diskon
-    //     $(".diskon-data").each(function () {
-    //         $(this).toggleClass("disabled", ongkirNum < this.dataset.minongkir);
-    //     });
-    // }
 });
 
 /// SCRIPT PILIH VOUCHER DISKON
@@ -66,7 +41,6 @@ $(".diskon-data").click(function () {
 
     //mengambil data attr
     id_diskon = $(this).attr("data-id");
-    console.log(id_diskon);
     persen = $(this).attr("data-percentage");
     namadiskon = $(this).attr("data-name");
 
@@ -77,9 +51,17 @@ $(".diskon-data").click(function () {
 
     persenDesimal = ((persen / ongkir) * 100).toFixed(2);
     diskon = persenDesimal * ongkir;
-    // if (diskon.length > 0) {
-    document.getElementById("potonganDiskon").value = -diskon;
-    // }
+    ///FORMAT DISKON YANG DITAMPILKAN DI VIEW WELCOME
+    var diskon_str = diskon.toString(),
+        sisa = diskon_str.length % 3,
+        rupiah = diskon_str.substr(0, sisa),
+        ribuan = diskon_str.substr(sisa).match(/\d{3}/g);
+    if (ribuan) {
+        separator = sisa ? "." : "";
+        diskon1 = rupiah + separator + ribuan.join(".");
+    }
+    document.getElementById("potonganDiskon").value = -diskon1;
+
     hitungTotal();
 });
 
@@ -147,7 +129,16 @@ $("#addOrder1").on("click", function () {
         text = "0";
     }
     // $('.addOrder').html(text);
-    document.getElementById("biayarq").value = text;
+    ///FORMAT TOTAL YANG DITAMPILKAN DI VIEW WELCOME
+    var addOrder_str = text.toString(),
+        sisa = addOrder_str.length % 3,
+        rupiah = addOrder_str.substr(0, sisa),
+        ribuan = addOrder_str.substr(sisa).match(/\d{3}/g);
+    if (ribuan) {
+        separator = sisa ? "." : "";
+        text1 = rupiah + separator + ribuan.join(".");
+    }
+    document.getElementById("biayarq").value = text1;
     addOrder = parseInt(text);
     hitungTotal();
 });
@@ -321,10 +312,21 @@ function hitungOngkir() {
     if (ongkir1 < 5000) {
         ongkir1 = 5000;
     } else {
-        biaya = ongkir1;
+        biaya = parseInt(ongkir1);
     }
 
-    document.getElementById("ongkir").value = parseInt(biaya);
+    //menambahkan format Rupiah
+    // formatBiaya = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(biaya);
+    ///FORMAT ONGKIR YANG DITAMPILKAN DI VIEW WELCOME
+    var biaya_str = biaya.toString(),
+        sisa = biaya_str.length % 3,
+        rupiah = biaya_str.substr(0, sisa),
+        ribuan = biaya_str.substr(sisa).match(/\d{3}/g);
+    if (ribuan) {
+        separator = sisa ? "." : "";
+        biaya1 = rupiah + separator + ribuan.join(".");
+    }
+    document.getElementById("ongkir").value = biaya1;
 
     ongkir = ongkir1;
 
@@ -350,7 +352,16 @@ function hitungTotal() {
 
     totalOngkir = ongkir2 - diskon;
     total = totalOngkir + addOrder;
-    document.getElementById("total").value = total;
+    ///FORMAT TOTAL YANG DITAMPILKAN DI VIEW WELCOME
+    var total_str = total.toString(),
+        sisa = total_str.length % 3,
+        rupiah = total_str.substr(0, sisa),
+        ribuan = total_str.substr(sisa).match(/\d{3}/g);
+    if (ribuan) {
+        separator = sisa ? "." : "";
+        total1 = rupiah + separator + ribuan.join(".");
+    }
+    document.getElementById("total").value = total1;
 }
 
 function gotowhatsapp() {

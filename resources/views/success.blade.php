@@ -8,7 +8,7 @@
     </div>
     <div class="container-svg">
         <svg xmlns="http://www.w3.org/2000/svg" class="svg-success" viewBox="0 0 24 24">
-            <g stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+            <g stroke-linecap="round" stroke-linejoin="round" strweoke-miterlimit="10">
                 <circle class="success-circle-outline" cx="12" cy="12" r="11.5" />
                 <circle class="success-circle-fill" cx="12" cy="12" r="11.5" />
                 <polyline class="success-tick" points="17,8.5 9.5,15.5 7,13" />
@@ -39,7 +39,6 @@
         <button class="btn btn-primary btn-lg" role="button" onclick="gotowhatsapp();">KLIK DISINI JIKA BELUM DIARAHKAN
             DALAM BEBERAPA DETIK</button>
     </div>
-
 
     <script>
         window.onload = function() {
