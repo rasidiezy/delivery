@@ -17,7 +17,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Buntok Delivery</title>
 
 </head>
 

@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             AdminUserTableSeeder::class,
             PickupSeeder::class,
             DiscountSeeder::class,
+            OngkirSeeder::class,
+            WhatsappSeeder::class,
         ]);
     }
 }

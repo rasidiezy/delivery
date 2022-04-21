@@ -75,8 +75,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary-discount btn-lg btn-block" data-dismiss="modal"
                             aria-label="Close"><span aria-hidden="true">OK</button>
-                        {{-- <button type="button" class=" mt-2 custom-close d-flex align-items-end" data-dismiss="modal"
-                    aria-label="Close"><span aria-hidden="true">TUTUP</span></button> --}}
                     </div>
                 </div>
             </div>
@@ -89,7 +87,7 @@
             </div>
         </div>
         <div class="container1">
-            <div class="row text-center pb-70">
+            <div class="row col-12 text-center pb-70">
                 <div class="col-lg-12 col-12 header-wrap mb-4 mt-2">
                     <h2 class="text-header">
                         #SiapBehujanBepanas

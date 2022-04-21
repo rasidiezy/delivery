@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <h4> Buntok Delivery</h4>
+            <h4>Buntok Delivery</h4>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,8 +22,8 @@
                 <li class="nav-item {{ request()->is('ongkir') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('ongkir.index') }}">Biaya Ongkir</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mitra.index') }}">No WA Admin CS</a>
+                <li class="nav-item {{ request()->is('whatsapp') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('whatsapp.index') }}">No WA Admin CS</a>
                 </li>
             </ul>
             @auth
@@ -42,7 +42,8 @@
                                 <a href="#" class="dropdown-item"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Sign
                                     Out</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="post"
+                                    style="display: none">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 </form>
                             </li>

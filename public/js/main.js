@@ -61,7 +61,7 @@ $(".diskon-data").click(function () {
         diskon1 = rupiah + separator + ribuan.join(".");
     }
     // console.log(diskon1);
-    document.getElementById("potonganDiskon").value = -diskon;
+    document.getElementById("potonganDiskon").value = -diskon.toFixed(2);
 
     hitungTotal();
 });
@@ -305,12 +305,10 @@ function initMap() {
 
 function hitungOngkir() {
     var biayaongkir = document.getElementById("ongkirkm").value;
-    var ongkirkm = biayaongkir.charAt(0);
     var jarak1 = jarak;
     jarak1 = jarak1.replace(",", ".");
     var explode = jarak1.split(" ", 1);
-    var meter = parseFloat(explode) * 1000;
-    var ongkir1 = meter * ongkirkm;
+    var ongkir1 = explode * biayaongkir;
 
     if (ongkir1 < 5000) {
         ongkir1 = 5000;
@@ -384,6 +382,9 @@ function gotowhatsapp() {
     var namamitra = document.getElementById("namamitra").value;
     var potongandiskon = document.getElementById("potonganDiskon").value;
 
+    var nowhatsapp = document.getElementById("nowhatsapp").value;
+    var nowa = nowhatsapp.replace("0", "62");
+
     // var lengthbrq = biayarq.length;
     // console.log(lengthbrq);
 
@@ -419,7 +420,9 @@ function gotowhatsapp() {
     }
 
     var url =
-        "https://wa.me/6285158580660?text=" +
+        "https://wa.me/" +
+        nowa +
+        "?text=" +
         "Halo saya baru saja memesan jasa pengantaran" +
         " *Buntok Delivery* " +
         "dengan detail pesanan sebagai berikut :" +
@@ -477,7 +480,9 @@ function gotowhatsapp() {
         "%0a";
 
     var urls =
-        "https://wa.me/6285158580660?text=" +
+        "https://wa.me/" +
+        nowa +
+        "?text=" +
         "Halo saya baru saja memesan jasa pengantaran" +
         " *Buntok Delivery* " +
         "dengan detail pesanan sebagai berikut :" +

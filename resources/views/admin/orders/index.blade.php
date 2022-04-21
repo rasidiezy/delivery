@@ -68,7 +68,7 @@
                                     </tr>
                                 @empty
                                     <tr class="text-center">
-                                        <td colspan="6">Tidak Ada Data Mitra</td>
+                                        <td colspan="7">Tidak Ada Data Order</td>
                                     </tr>
                                 @endforelse
                             </tbody>

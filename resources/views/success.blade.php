@@ -15,6 +15,7 @@
             </g>
         </svg>
     </div>
+    <input id='nowhatsapp' type='hidden' value='{{ $whatsapp->no_hp }}'>
     <input id='nama' type='hidden' value='{{ ucwords(trans($nama)) }}'>
     <input id='ltuser' type='hidden' value='{{ $ltuser }}'>
     <input id='lguser' type='hidden' value='{{ $lguser }}'>
