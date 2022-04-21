@@ -1,10 +1,136 @@
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.aksi-display {
+    display: inline-flex;
+    /* width: 20%; */
+}
+
+table.dataTable td,
+table.dataTable th {
+    font-size: 15px;
+}
+
+.edit-margin {
+    margin-right: 5px;
+}
+
+.modal-header {
+    background-color: #1d887e;
+    color: white;
+}
+
+#name,
+#nohp,
+#alamat1,
+#tujuan,
+#detail,
+#rqorder,
+#jarak,
+#ongkir,
+#diskon,
+#biayarq,
+#total,
+#waktu {
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    pointer-events: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    font-weight: 500;
+    color: white;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: white;
+}
+
+.input-group
+    > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-right: -7px;
+    margin-left: 223px;
+    margin-top: -1px;
+    height: 32px;
+}
+
+.badge-diskon {
+    font-size: 10px;
+    font-weight: 100;
+    font-family: "Rubik", sans-serif;
+}
+
+.table > :not(caption) > * > * {
+    font-family: "Rubik", sans-serif;
+}
+
+.modal-title {
+    font-family: "Rubik", sans-serif;
+}
+
+.col-form-label-sm {
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
 .navbar-brand {
     font-family: "Rubik", sans-serif;
     color: white;
+    padding-top: 10px;
+}
+
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }
 
 .alert-weight {
     font-weight: 300;
+}
+
+.label-text-modal {
+    font-family: "Rubik", sans-serif;
+}
+
+.active {
+    border-bottom: 1px solid white;
 }
 
 .nav-link {

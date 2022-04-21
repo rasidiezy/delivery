@@ -11,6 +11,11 @@
     width: 300px;
 }
 
+table.dataTable td,
+table.dataTable th {
+    font-size: 15px;
+}
+
 .diskon-data {
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
     height: 100px;

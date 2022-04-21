@@ -7,18 +7,24 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Pickup;
 use App\Models\Discount;
+use App\Models\Ongkir;
 use App\Http\Requests\Store;
 
 class OrderController extends Controller
 {
     public function index()
     {
-    //mengambil data checkout, user dan paket sesuai user yang login
-    // $order = Order::find(1);
+    //mengambil semua data pickup 
       $mitra = Pickup::all();
+    //mengambil semua data pickup 
+      $ongkirs = Ongkir::all();
+      $ongkir = $ongkirs->where('id', 1)->first();
+      //mengambil semua data diskon 
       $discount = Discount::all();
+      //filter data diskon yang dimana tanggal berakhir lebih dari tanggal hari ini.
+      $diskon = $discount->where('end_discount', '>', date('Y-m-d'));
       return view('welcome',[
-          'mitra' => $mitra , 'discount' => $discount
+          'mitra' => $mitra , 'discount' => $diskon, 'ongkir' => $ongkir
       ]);
     }
 

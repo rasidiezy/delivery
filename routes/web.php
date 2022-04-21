@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\DashboardController as AdminDashboard;
+use App\Http\Controllers\admin\AdminOrderController as AdminDashboard;
 use App\Http\Controllers\admin\MitraController;
+use App\Http\Controllers\admin\DiskonController;
+use App\Http\Controllers\admin\OngkirController;
 use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,9 @@ Route::middleware('auth')->group(function(){
 Route::get('dashboard', [AdminDashboard::class, 'index'])->name('dashboard');
 
 Route::resource('mitra', MitraController::class);
+Route::resource('diskon', DiskonController::class);
+Route::resource('ongkir', OngkirController::class);
+
 });
 
 Route::post('order',[OrderController::class, 'store'])->name('order.store'); 

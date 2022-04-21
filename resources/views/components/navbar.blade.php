@@ -1,20 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"> Buntok Delivery</a>
+        <a class="navbar-brand" href="#">
+            <h4> Buntok Delivery</h4>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Data Order</a>
+                <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
+                    <a class="nav-link" aria-current="page" href="{{ route('dashboard') }}">Data Order<span
+                            class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ request()->is('mitra') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('mitra.index') }}">Data Mitra</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mitra.index') }}">Biaya Ongkir</a>
+                <li class="nav-item {{ request()->is('diskon') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('diskon.index') }}">Data Diskon</a>
+                </li>
+                <li class="nav-item {{ request()->is('ongkir') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('ongkir.index') }}">Biaya Ongkir</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('mitra.index') }}">No WA Admin CS</a>

@@ -49,7 +49,7 @@ $(".diskon-data").click(function () {
     document.getElementById("diskon").value = namadiskon;
     document.getElementById("idDiskon").value = id_diskon;
 
-    persenDesimal = ((persen / ongkir) * 100).toFixed(2);
+    persenDesimal = (persen / ongkir) * 100;
     diskon = persenDesimal * ongkir;
     ///FORMAT DISKON YANG DITAMPILKAN DI VIEW WELCOME
     var diskon_str = diskon.toString(),
@@ -60,7 +60,8 @@ $(".diskon-data").click(function () {
         separator = sisa ? "." : "";
         diskon1 = rupiah + separator + ribuan.join(".");
     }
-    document.getElementById("potonganDiskon").value = -diskon1;
+    // console.log(diskon1);
+    document.getElementById("potonganDiskon").value = -diskon;
 
     hitungTotal();
 });
@@ -303,14 +304,17 @@ function initMap() {
 }
 
 function hitungOngkir() {
+    var biayaongkir = document.getElementById("ongkirkm").value;
+    var ongkirkm = biayaongkir.charAt(0);
     var jarak1 = jarak;
     jarak1 = jarak1.replace(",", ".");
     var explode = jarak1.split(" ", 1);
     var meter = parseFloat(explode) * 1000;
-    var ongkir1 = meter * 2;
+    var ongkir1 = meter * ongkirkm;
 
     if (ongkir1 < 5000) {
         ongkir1 = 5000;
+        biaya = 5000;
     } else {
         biaya = parseInt(ongkir1);
     }
@@ -327,7 +331,6 @@ function hitungOngkir() {
         biaya1 = rupiah + separator + ribuan.join(".");
     }
     document.getElementById("ongkir").value = biaya1;
-
     ongkir = ongkir1;
 
     hitungTotal();

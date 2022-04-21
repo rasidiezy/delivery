@@ -112,6 +112,7 @@
                         <form action="{{ route('order.store') }}" id="test" class="basic-form" method="post">
                             @csrf
                             <div class="form-group mb-3">
+                                <input id="ongkirkm" type="hidden" value="{{ $ongkir->ongkir }}">
                                 <input id="lat" name="latitude" type="hidden" value="{{ old('latitude') }}">
                                 <input id="long" name="longitude" type="hidden" value="{{ old('longitude') }}">
                                 <input id="idDiskon" type="hidden" name="id_diskon" value="{{ old('id_diskon') }}">
